@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import React from 'react'
+import Router from './routes';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+interface AppProps {
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            +1
-          </button>
-          count is: {count}
-        </p>
-      </header>
-    </div>
-  )
 }
 
-export default App
+interface AppState {
+
+}
+
+class App extends React.Component<AppProps, AppState> {
+  render() {
+    return (
+      <Router />
+    );
+  }
+}
+
+export default App;

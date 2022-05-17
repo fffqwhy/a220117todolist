@@ -1,0 +1,27 @@
+$siderColor:#fff;
+
+.content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.layoutSecond{
+    flex:1;
+}
+.homeHeader{
+    color:$siderColor;
+    padding:0 11px;
+    display: flex;
+    justify-content: space-between;
+}
+.headerMenu{
+    width: 180px;
+    background-color: rgba(0, 0, 0, 0.401);
+    color: $siderColor;
+}
+.homeSider{
+    color:$siderColor;
+}
+.siderMenu{
+    background-color: rgba(0, 0, 0, 0.401);
+}
