@@ -23,9 +23,7 @@ class Home extends React.Component<Props, State> {
             },
             {
                 label: (
-                    <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                        我的
-                    </a>
+                    <Link to='/login' >login</Link>
                 ),
                 key: 'two',
             },
