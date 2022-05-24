@@ -1,18 +1,16 @@
 import React from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import SetStore from '../pages/home/component/btnSetStore';
 import Test from '../pages/home/component/btnShowKoa';
 
 function Router() {
     return (
         <Switch>
             <Route exact path='/home'>
-                <div>
-                    12sdf3
-                    <Test/>
-                </div>
+                <Test/>
             </Route>
-            <Route exact path='/home/2452'>
-                <div>2452</div>
+            <Route exact path='/home/setstore'>
+                <SetStore/>
             </Route>
             <Redirect to='/home' />
         </Switch>

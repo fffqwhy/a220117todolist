@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "antd";
 import {getKoaIndex} from '../../../../api/home/index';
+import { connect } from "react-redux";
+import { mapStateToProps } from "../../../../redux/connectFunctions/userInfo";
 
 interface Props {
-    
+    userInfo_store:any
 }
  
 interface State {
@@ -24,14 +26,19 @@ class Test extends React.Component<Props, State> {
         })
     }
     render() { 
+        const {userInfo_store} = this.props;
         const {koastring} = this.state;
         return (
             <div>
                 <Button onClick={this.getkoa}>get</Button>
                 {koastring}
+                <hr />
+                redux - userinfo:
+                <br />
+                {userInfo_store}
             </div>
         );
     }
 }
- 
-export default Test;
+const TestC = connect(mapStateToProps,{})(Test);
+export default TestC;

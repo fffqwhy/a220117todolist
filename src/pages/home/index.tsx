@@ -3,10 +3,12 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Menu } from 'antd';
+import {connect} from 'react-redux';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import HomeRouter from '../../routes/home';
 import '../../scss/home/index.scss';
+import { mapDispatchToProps, mapStateToProps } from '../../redux/connectFunctions/userInfo';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -14,6 +16,12 @@ interface Props { }
 interface State { }
 
 class Home extends React.Component<Props, State> {
+  constructor(props:Props){
+    super(props);
+  }
+  componentDidMount(){
+    console.log(this.props);
+  }
   render() {
     const items: MenuProps['items'] = [
       {
@@ -34,8 +42,8 @@ class Home extends React.Component<Props, State> {
         key: 'home',
       },
       {
-        label: (<Link to='/home/2452' >2452</Link>),
-        key: 'home/2452',
+        label: (<Link to='/home/setstore' >setStore</Link>),
+        key: 'home/setstore',
       },
     ];
     return (
@@ -67,5 +75,5 @@ class Home extends React.Component<Props, State> {
     );
   }
 }
-
-export default Home;
+const HomeC = connect(mapStateToProps,mapDispatchToProps)(Home);
+export default HomeC;
