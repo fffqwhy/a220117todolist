@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "antd";
 import {getKoaIndex} from '../../../../api/home/index';
 import { connect } from "react-redux";
+import styles from '../../../../scss/home/component/btnShowKoa/index.module.scss';
 import { mapStateToProps } from "../../../../redux/connectFunctions/userInfo";
 
 interface Props {
@@ -29,7 +30,7 @@ class Test extends React.Component<Props, State> {
         const {userInfo_store} = this.props;
         const {koastring} = this.state;
         return (
-            <div>
+            <div className={styles['container']}>
                 <Button onClick={this.getkoa}>get</Button>
                 {koastring}
                 <hr />

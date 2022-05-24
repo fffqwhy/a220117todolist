@@ -1,6 +1,7 @@
 import { Button, Input } from 'antd';
 import React from 'react';
 import { connect } from 'react-redux';
+import styles from '../../../../scss/home/component/btnSetStore/index.module.scss';
 import { mapStateToProps, mapDispatchToProps } from '../../../../redux/connectFunctions/userInfo';
 
 interface Props {
@@ -25,7 +26,7 @@ class SetStore extends React.Component<Props, State> {
         this.props.setUserInfoByStore(this.state.setStoreValue);
     }
     render() {
-        return (<div>
+        return (<div className={styles['container']}>
             <Input
                 onChange={(e) => {
                     this.setState({ setStoreValue: e.target.value });
