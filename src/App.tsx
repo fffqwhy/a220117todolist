@@ -15,7 +15,7 @@ class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <>
-        <WaterMark />
+        {/* <WaterMark /> */}
         <Router />
       </>
     );
